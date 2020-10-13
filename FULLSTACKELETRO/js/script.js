@@ -21,16 +21,31 @@ function imprimirTodos(){
 };
 
 
-
 function destaque(imagem) {
-  let img = imagem.style = "width:260px;height:300px;";
-  let img2 = imagem.style = "width:200px;height:250px";
-
-  if (img2 == "width:200px;height:250px") {
-    imagem.style = "width:260px;height:300px;";
-  } else if (img == "width:260px;height:300px;") {
-    imagem.style = "width:200px;height:250px";
-  }
-  
+   if (imagem.style.width == '260px') {
+      imagem.style.width = '200px';
+      imagem.style.height = '250px';
+    } else {
+      imagem.style.width = '260px';
+      imagem.style.height = '300px';
+}
 };
 
+function destaque2(img) {
+    img.style.width = '80%';
+    img.style.height = '95%';
+};
+
+function out(img2){
+  img2.style.width = '60%';
+  img.style.height = '85%';
+};
+
+function font(tamanho) {
+  tamanho.style.fontSize = '40px';
+  tamanho.style.margin = '5px 5px';
+};
+
+function fontOut (tamanho2){
+  tamanho2.style.fontSize = '22px';
+};
