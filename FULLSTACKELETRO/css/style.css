@@ -141,6 +141,7 @@ footer p {
     display: inline-block;
     text-align: center;
     vertical-align: bottom;
+    margin: 20px;
 }
 .box_produtos img {
     width: 200px;
