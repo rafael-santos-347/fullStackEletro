@@ -8,15 +8,9 @@
     <script src="js/script.js"></script>
 </head>
 <body>
-    <!--Menu-->
-    <div id="menu">
-        <div class="logo"><a href="index.html"><img onmousemove="destaque2(this)" onmouseout="out(this)" src="imagens/msg_eletro.jpeg" alt="Logo Full Stack Eletro"></a></div>    
-        <ul>
-            <li><nav><a class="links"  href="produtos.html">Produtos</a></nav></li>
-             <li><nav><a class="links"  href="contato.html">Contato</a></nav></li>
-        </ul>
-</div>    
-<!--Fim Menu-->
+    <?php
+        require('menu.html');
+   ?>
 
     <header class="lojas">
         <h1>Nossas lojas</h1><hr>
