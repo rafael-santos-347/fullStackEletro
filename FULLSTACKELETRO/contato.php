@@ -20,29 +20,22 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
-<body>
+<body class="container-fluid px-0">
     <?php
         require('menu.html');
    ?>
-            <h5 id="msg"></h5>
+
     <header>
-        <h1 class="h1_contatos">Contato</h1><hr>
+        <h1 class="text-center text-dark mb-5">Contato</h1><hr>
     </header>
     
-    <table class="contatos">
-        <tr>
-            <td>
-                <img id="img1" src="imagens/email.jpg" alt="">
-                <p>Contato@fullstackeletro.com</p>
-            </td>
-
-            <td>
-                <img id="img2" src="imagens/whatsapp.jpg" width="50px" alt="">
-                <p>(11) 9999-9999</p>
-            </td>
-        </tr>
-
-    </table>
+    <div class="row container-fluid align-items-center justify-content-center mb-5">
+                <img class="col-sm-1" id="img1" src="imagens/email.jpg" alt="">
+                <p class="col-sm-4">Contato@fullstackeletro.com</p>
+       
+                <img class="col-sm-1" id="img2" src="imagens/whatsapp.jpg" width="50px" alt="">
+                <p class="col-sm-4">(11) 9999-9999</p>
+    </div>
 
     <script>
         function exibeMsg() {
@@ -51,23 +44,29 @@
     </script>
 
   
-    <form class="form_contatos" action="" method="post">
-        <label for="nome"><h4>Nome: </h4></label>
-        <input type="text" name="nome" placeholder="Digite seu nome">
-        <label for="msg"><h4>Mensagem: </h4></label>
-        <textarea name="msg" placeholder="Digite sua mensagem"></textarea><br><br>
-        <input onclick="exibeMsg()" type="submit" value="Enviar">
+    <form class="form-group text-center mt-5 mb-5 container-fluid" action="" method="post">
+        <div class="row align-items-center justify-content-center">
+        <label for="nome" class="col-sm-2 col-form-label "><h4>Nome: </h4></label>
+        <input class="form-control-sm col-sm-2 form-control-plaintext" type="text" name="nome" placeholder="Digite seu nome">
+        </div>
+        <div class="row align-items-center justify-content-center mt-3">
+        <label for="msg" class="col-sm-2 col-form-label"><h4>Mensagem: </h4></label>
+        <textarea class="form-control-lg col-sm-2 form-control-plaintext" name="msg" placeholder="Digite sua mensagem"></textarea>
+        </div>
+        <div class="row align-items-center justify-content-center">
+        <input class="btn btn-danger col-sm-1 mt-5" onclick="exibeMsg()" type="submit" value="Enviar">
+        </div>
     </form>
     
 
-    <center><h4 style="margin-bottom:30px;"> Comentários:</h4>
+    <h4 class="display-4 text-center text-dark"> Comentários:</h4>
+    <div class="text-center lead mt-5 mb-5">
 <?php
     $sql = "select * from contato;";
     $resultado = mysqli_query($link, $sql);
 
     if($resultado->num_rows > 0) {
         while($linha = $resultado->fetch_assoc()) {
-          // echo "Nome: $linha['nome'] <br> Mensagem: $linha['mensagem']";
             echo "Nome: ". $linha['nome'] ."<br>Mensagem: ". $linha['mensagem'] ."<br>Data: ". $linha['data'] ."<hr style='width:150px'>";
     }
     } else {
@@ -75,15 +74,11 @@
     }
     
  ?>   
-    </center>
+    </div>
 
-    <!--Cabeçalho-->
-    <footer>
-        <h4 class="h4_cabeçalho">Formas de Pagamento</h4>
-        <img class="img_cabeçalho"  src="imagens/pag.jpeg" alt="Formas de Pagamento">
-        <p class="p_cabeçalho">&copy; Recodepro</p>
-    </footer>
-    
-    <!--Fim Cabeçalho-->
+    <?php
+        require('footer.html');
+    ?>
+
 </body>
 </html>

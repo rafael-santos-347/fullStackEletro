@@ -28,52 +28,45 @@
         }
     </style>
 </head>
-<body>
+<body class="container-fluid px-0">
     <?php
         require('menu.html');
    ?>
            
-    <table class="contatos">
-        <tr>
-            <td>
-                <img id="img1" src="imagens/email.jpg" alt="">
-                <p>Contato@fullstackeletro.com</p>
-            </td>
-
-            <td>
-                <img id="img2" src="imagens/whatsapp.jpg" width="50px" alt="">
-                <p>(11) 9999-9999</p>
-            </td>
-        </tr>
-
-    </table>
+        <header>
+            <h1 class="text-center text-dark mb-5">Contato</h1><hr>
+        </header>
     
-    <center>
-            <form action="" method="post">
+            <div class="row container-fluid align-items-center justify-content-center mb-5">
+                <img class="col-sm-1" id="img1" src="imagens/email.jpg" alt="">
+                <p class="col-sm-4">Contato@fullstackeletro.com</p>
+       
+                <img class="col-sm-1" id="img2" src="imagens/whatsapp.jpg" width="50px" alt="">
+                <p class="col-sm-4">(11) 9999-9999</p>
+            </div>
+    
+    
+            <form class="form-group container mb-5 mt-5 text-center" action="" method="post">
                 <legend><h1>Faça um pedido</h1></legend>
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome"><br><br>
+                <label class="mt-5" for="nome">Nome:</label>
+                <input class="form-control-lg ml-3" type="text" name="nome"><br><br>
                 <label for="endereco">Endereço: </label>
-                <input type="text" name="endereco"><br><br>
+                <input class="form-control-lg ml-3" type="text" name="endereco"><br><br>
                 <label for="telefone">Telefone: </label>
-                <input type="tel" name="telefone"><br><br>
+                <input class="form-control-lg ml-3" type="tel" name="telefone"><br><br>
                 <label for="nome_produto">Produto: </label>
-                <input type="text" name="nome_produto"><br><br>
+                <input class="form-control-lg ml-3" type="text" name="nome_produto"><br><br>
                 <label for="valor">Valor: </label>
-                <input type="number" name="valor"><br><br>
+                <input class="form-control-lg ml-3" type="number" name="valor"><br><br>
                 <label for="quantidade">Quantidade: </label>
-                <input type="number" name="quantidade"><br><br>
-                <button type="submit">Enviar</button>
+                <input class="form-control-lg ml-3" type="number" name="quantidade"><br><br>
+                <button type="submit" class="btn btn-danger mb-5">Enviar</button>
             </form>
 
-    </center>
-    <!--Cabeçalho-->
-        <footer>
-        <h4 class="h4_cabeçalho">Formas de Pagamento</h4>
-        <img class="img_cabeçalho"  src="imagens/pag.jpeg" alt="Formas de Pagamento">
-        <p class="p_cabeçalho">&copy; Recodepro</p>
-        </footer>
     
-    <!--Fim Cabeçalho-->
+    <?php
+        require('footer.html');
+    ?>
+
 </body>
 </html>

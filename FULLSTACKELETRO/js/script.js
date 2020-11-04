@@ -22,23 +22,13 @@ function imprimirTodos(){
 
 
 function destaque(imagem) {
-   if (imagem.style.width == '260px') {
-      imagem.style.width = '200px';
-      imagem.style.height = '250px';
+   if (imagem.style.width == '15vw') {
+      imagem.style.width = '10vw';
+      imagem.style.height = '19vh';
     } else {
-      imagem.style.width = '260px';
-      imagem.style.height = '300px';
+      imagem.style.width = '15vw';
+      imagem.style.height = '24vh';
 }
-};
-
-function destaque2(img) {
-    img.style.width = '80%';
-    img.style.height = '95%';
-};
-
-function out(img2){
-  img2.style.width = '60%';
-  img.style.height = '85%';
 };
 
 function font(tamanho) {

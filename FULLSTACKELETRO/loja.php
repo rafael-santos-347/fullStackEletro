@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 </head>
-<body>
+<body class="container-fluid px-0">
     <?php
         require('menu.html');
    ?>
 
-    <header class="lojas">
-        <h1>Nossas lojas</h1><hr>
+    <header class="display-3 text-info text-center mb-5">
+        <h1>Nossas lojas</h1>
     </header>
-    <table class="lojas">
+    <table class="table text-center">
         <tr>
             <td>
                 <h3>Rio de Janeiro</h3>
@@ -44,13 +44,9 @@
     </table>
     
     
-   <!--Cabeçalho-->
-   <footer>
-    <h4 class="h4_cabeçalho">Formas de Pagamento</h4>
-    <img class="img_cabeçalho"  src="imagens/pag.jpeg" alt="Formas de Pagamento">
-    <p class="p_cabeçalho">&copy; Recodepro</p>
-</footer>
+    <?php
+        require('footer.html');
+    ?>
 
-<!--Fim Cabeçalho-->
 </body>
 </html>
