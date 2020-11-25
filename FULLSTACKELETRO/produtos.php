@@ -39,26 +39,28 @@
     <section class="produtos col-sm-8 mt-1 mb-5 container-fluid">
       <div class="row  text-center ">
 <?php
-    $sql = "select * from produtos;";
-    $resultado = mysqli_query($link, $sql);
+    
+    $dados = file_get_contents('http://localhost/projetos/FULLSTACKELETRO/getContent.php?table=produtos');
+    
+    var_dump(json_decode($dados));
 
-    if($resultado->num_rows > 0) {
-        while($linha = $resultado->fetch_assoc()) {
+    //var_dump($dados);
+
+    //var_dump(json_decode($dados))
+
+    
            
 ?>
         
-        <div class="col-sm-4 my-3" id="<?php echo $linha['nome'];?>" style="display: inline-block;">
-                <img class="mb-4" id="img_produto" src="<?php echo $linha['nome_imagens'];?>" onclick="destaque(this)"><br>
-                <p class="p1"><?php echo $linha['descricao'];?></p><hr>
+        <div class="col-sm-4 my-3" id="<?php //echo $linha['nome'];?>" style="display: inline-block;">
+                <img class="mb-4" id="img_produto" src="<?php //echo $linha['nome_imagens'];?>" onclick="destaque(this)"><br>
+                <p class="p1"><?php //echo $linha['descricao'];?></p><hr>
                 <p class="p1 p2">R$ 5.609,90</p>
-                <p class="p3" onmousemove="font(this)" onmouseout="fontOut(this)" ><?php echo $linha['preco'];?></p>
+                <p class="p3" onmousemove="font(this)" onmouseout="fontOut(this)" ><?php //echo $linha['preco'];?></p>
         </div>
 <?php
 
-    }
-    } else {
-        echo "Nenhum produto cadastrado !";
-    }
+   
 ?>
     </div>
     </section>
