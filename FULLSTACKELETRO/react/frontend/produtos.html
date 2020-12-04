@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <title>Produtos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="container-fluid px-0">
+    <noscript>É necesário habilitar o javascript !</noscript>
+    <div id="root"></div>
+    <script type="text/babel">
+        const Menu = () => {
+            return (
+                <div className="container-fluid mb-5">
+                    <nav className="navbar row bg-danger">
+                        <div className="navbar-brand active col-sm-1"><a href="index.html"><div id="feletro"></div></a></div>            
+                        <a className="nav-link col-sm-1 px-0 py-0 text-white"  href="produtos.html">Produtos</a>
+                        <a className="nav-link col-sm-1 px-0 py-0 text-white"  href="loja.html">Lojas</a>
+                        <a className="nav-link col-sm-1 px-0 py-0 text-white"  href="contato.html">Contato</a>
+                        <a className="nav-link col-sm-1 px-0 py-0 text-white" href="pedidos.html">Pedidos</a>
+                    </nav>
+                </div>
+            );
+        }
+
+
+        const Produto = () => {
+
+            const [produtos, setProdutos] = React.useState([]);
+
+            React.useEffect(async() => {
+                const resposta = await fetch('http://localhost/projetos/react/backend/index.php?table=produtos');
+                setProdutos(await resposta.json());
+            }, []);
+
+            return(
+                <React.Fragment>
+                    {produtos.map((elemento) => {
+                        return(
+                            <section key={elemento.id_produtos} className="col-4 h-50 w-25 my-4 py-1 display-inline-block" id={elemento.id_produtos}>
+                                <img className="img-fluid" id="img_produto" src={elemento.nome_imagens} /><br />
+                                <p className="p1">{elemento.descricao}</p><hr />
+                                <p className="p1 p2">R$ 5.609,90</p>
+                                <p className="p3">{elemento.preco}</p>
+                            </section>
+                        );
+                    })}
+                </React.Fragment>
+            );
+        }
+
+        const Main = () => {
+
+           return (
+                <main className="my-4 py-3">
+                    <header>
+                        <h1 className="text-dark text-center mb-5">Produtos</h1>
+                    </header>
+                    
+                    <div className="row container-fluid mx-0 px-0 align-items-start">
+                        <section className="indice ml-4 mr-0  col-sm-2"> 
+                            <h3 className="mt-3 mb-5" >Categorias</h3>
+                                <ul className="list-group">
+                                    <li className="my-3 list-group-item">Todos (12)</li>
+                                    <li className="my-3 list-group-item">Geladeira (3)</li>
+                                    <li className="my-3 list-group-item">Fogões (2)</li>
+                                    <li className="my-3 list-group-item">Microondas (3)</li>
+                                    <li className="my-3 list-group-item">Lavadora de roupas (2)</li>
+                                    <li className="my-3 list-group-item">Lava-Louças (2)</li>
+                                </ul>
+                        </section>
+
+                        <section className="produtos col-sm-8 mt-1 mb-5 container-fluid">
+                        <div className="row text-center ">
+
+                            <Produto />
+
+                        </div>
+                        </section>
+                    </div>
+                 </main>
+            );
+        }
+
+
+        const Footer = () => {
+            return(
+                <footer className="text-center">
+                    <h4 className="text-warning lead">Formas de Pagamento</h4>
+                    <img className="img_cabeçalho" src="imagens/pag.jpeg" alt="Formas de Pagamento" />
+                    <p className="bg-secondary">&copy; Recodepro</p>
+                </footer>
+            );
+        }
+
+        const App = () => {
+            return(
+                <React.Fragment>
+                    <Menu />
+                    <Main />
+                    <Footer />
+                </React.Fragment>
+            );
+        }
+
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById('root')
+        );
+
+
+    </script>
+</body>
+</html>
