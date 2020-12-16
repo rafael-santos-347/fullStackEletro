@@ -7,7 +7,6 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="js/script.js"></script>
     <title>Pedidos</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,122 +14,11 @@
 <body class="container-fluid px-0">
     <noscript>É necesário habilitar o javascript !</noscript>
     <div id="root"></div>
-    <script type="text/babel">
-        const Menu = () => {
-            return (
-                <div className="container-fluid mb-5">
-                    <nav className="navbar row bg-danger">
-                        <div className="navbar-brand active col-sm-1"><a href="index.html"><div id="feletro"></div></a></div>            
-                        <a className="nav-link col-sm-1 px-0 py-0 text-white"  href="produtos.html">Produtos</a>
-                        <a className="nav-link col-sm-1 px-0 py-0 text-white"  href="loja.html">Lojas</a>
-                        <a className="nav-link col-sm-1 px-0 py-0 text-white"  href="contato.html">Contato</a>
-                        <a className="nav-link col-sm-1 px-0 py-0 text-white" href="pedidos.html">Pedidos</a>
-                    </nav>
-                </div>
-            );
-        }
-
-
-        const Pedido = () => {
-
-            const [pedidos, setPedidos] = React.useState([]);
-
-            React.useEffect(async() => {
-                const resposta = await fetch('http://localhost/projetos/react/backend/pedido.php');
-                setPedidos(await resposta.json());
-                
-            }, []);
-            return(
-                <React.Fragment>
-                    <section className="card w-25 mx-auto">
-                        <div className="card-header">
-                            <h5 className="card-title border-bottom mb-1">Ultima Venda</h5>
-                            <span className="lead card-text">{pedidos.cliente}</span> 
-                        </div>
-  
-                        <div className="card-body">
-                            <span className="lead card-text">{pedidos.produto}</span> 
-                        </div>
-
-                        <div className="card-footer">
-                            <span className="lead card-text">{pedidos.preço}</span> 
-                        </div>
-                    </section>
-                </React.Fragment>
-            );
-        }
-
-        const Main = () => {
-            return (
-                <main className="my-4 py-3">
-                    <header>
-                        <h1 className="text-center text-dark mb-5">Contato</h1><hr />
-                    </header>
-
-                    <div className="row container-fluid align-items-center justify-content-center mb-5">
-                        <img className="col-sm-1" id="img1" src="imagens/email.jpg" alt="" />
-                        <p className="col-sm-4">Contato@fullstackeletro.com</p>
-            
-                        <img className="col-sm-1" id="img2" src="imagens/whatsapp.jpg" width="50px" alt="" />
-                        <p className="col-sm-4">(11) 9999-9999</p>
-                    </div>
-
-                    <form className="form-group container mt-5 text-center" action="" method="post">
-                        <legend><h1>Faça um pedido</h1></legend>
-                        <label className="mt-5" htmlFor="nome">Nome:</label>
-                        <input className="form-control-lg ml-3 border border-dark" type="text" name="nome" /><br /><br />
-                        <label htmlFor="endereco">Endereço: </label>
-                        <input className="form-control-lg ml-3 border border-dark" type="text" name="endereco" /><br /><br />
-                        <label htmlFor="telefone">Telefone: </label>
-                        <input className="form-control-lg ml-3 border border-dark" type="tel" name="telefone" /><br /><br />
-                        <label htmlFor="nome_produto">Produto: </label>
-                        <input className="form-control-lg ml-3 border border-dark" type="text" name="nome_produto" /><br /><br />
-                        <label htmlFor="valor">Valor: </label>
-                        <input className="form-control-lg ml-3 border border-dark" type="number" name="valor" /><br /><br />
-                        <label htmlFor="quantidade">Quantidade: </label>
-                        <input className="form-control-lg ml-3 border border-dark" type="number" name="quantidade" /><br /><br />
-                        <button type="submit" className="btn btn-danger mb-5">Enviar</button>
-                    </form>
-
-                    <div className="text-center lead mb-1">
-
-                        <Pedido />
-
-                    </div>
-                        
-                    
-                 </main>
-            );
-        }
-
-
-        const Footer = () => {
-            return(
-                <footer className="text-center">
-                    <h4 className="text-warning lead">Formas de Pagamento</h4>
-                    <img className="img_cabeçalho" src="imagens/pag.jpeg" alt="Formas de Pagamento" />
-                    <p className="bg-secondary">&copy; Recodepro</p>
-                </footer>
-            );
-        }
-
-        const App = () => {
-            return(
-                <React.Fragment>
-                    <Menu />
-                    <Main />
-                    <Footer />
-                </React.Fragment>
-            );
-        }
-
-
-        ReactDOM.render(
-            <App />,
-            document.getElementById('root')
-        );
-
-
-    </script>
+    <script type="text/babel" src="./componentes/Menu.jsx"></script>
+    <script type="text/babel" src="./componentes/pedidos/pedido.jsx"></script>
+    <script type="text/babel" src="./componentes/pedidos/main.jsx"></script>
+    <script type="text/babel" src="./componentes/Footer.jsx"></script>
+    <script type="text/babel" src="./componentes/pedidos/App.jsx"></script>
+    <script type="text/babel" src="./componentes/pedidos/index.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@ const Contato = () => {
     React.useEffect(async() => {
         const resposta = await fetch('http://localhost/projetos/react/backend/index.php?table=contato');
         setContatos(await resposta.json());
-    }, []);
+    }, [contatos]);
 
     return(
         <React.Fragment>

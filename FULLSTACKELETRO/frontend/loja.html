@@ -7,7 +7,6 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <script src="js/script.js"></script>
     <title>Lojas</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,87 +14,10 @@
 <body class="container-fluid px-0">
     <noscript>É necesário habilitar o javascript !</noscript>
     <div id="root"></div>
-    <script type="text/babel">
-        const Menu = () => {
-            return (
-                <div className="container-fluid mb-5">
-                    <nav className="navbar row bg-danger">
-                        <div className="navbar-brand active col-sm-1"><a href="index.html"><div id="feletro"></div></a></div>            
-                        <a className="nav-link col-sm-1 px-0 py-0 text-white"  href="produtos.html">Produtos</a>
-                        <a className="nav-link col-sm-1 px-0 py-0 text-white"  href="loja.html">Lojas</a>
-                        <a className="nav-link col-sm-1 px-0 py-0 text-white"  href="contato.html">Contato</a>
-                        <a className="nav-link col-sm-1 px-0 py-0 text-white" href="pedidos.html">Pedidos</a>
-                    </nav>
-                </div>
-            );
-        }
-
-
-        const Main = () => {
-            return (
-                <main className="my-4 py-3">
-                    <header class="display-3 text-info text-center mb-5">
-                        <h1>Nossas lojas</h1>
-                    </header>
-                    <table class="table text-center">
-                        <tr>
-                            <td>
-                                <h3>Rio de Janeiro</h3>
-                                <p>Avenida Presidente Vargas, 5000</p>
-                                <p>10 &ordm; andar</p>
-                                <p>Centro</p>
-                                <p>(21) 3333-3333</p>
-                            </td>
-
-                            <td>
-                                <h3>São Paulo</h3>
-                                <p>Avenida Paulista, 985</p>
-                                <p>3 &ordm; andar</p>
-                                <p>Jardins</p>
-                                <p>(11) 4444-4444</p>
-                            </td>
-
-                            <td>
-                                <h3>Santa Catarina</h3>
-                                <p>Rua Major &Aacute; vila, 370</p>
-                                <p>Vila Mariana</p>
-                                <p>(47) 5555-5555</p>
-                            </td>
-                        </tr>
-
-                    </table>
-                 </main>
-            );
-        }
-
-
-        const Footer = () => {
-            return(
-                <footer className="text-center">
-                    <h4 className="text-warning lead">Formas de Pagamento</h4>
-                    <img className="img_cabeçalho" src="imagens/pag.jpeg" alt="Formas de Pagamento" />
-                    <p className="bg-secondary">&copy; Recodepro</p>
-                </footer>
-            );
-        }
-
-        const App = () => {
-            return(
-                <React.Fragment>
-                    <Menu />
-                    <Main />
-                    <Footer />
-                </React.Fragment>
-            );
-        }
-
-
-        ReactDOM.render(
-            <App />,
-            document.getElementById('root')
-        );
-
-
-    </script>
+    <script type="text/babel" src="./componentes/Menu.jsx"></script>
+    <script type="text/babel" src="./componentes/loja/main.jsx"></script>
+    <script type="text/babel" src="./componentes/Footer.jsx"></script>
+    <script type="text/babel" src="./componentes/loja/App.jsx"></script>
+    <script type="text/babel" src="./componentes/loja/index.js"></script>
 </body>
 </html>
