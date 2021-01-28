@@ -3,7 +3,7 @@ module.exports = () => {
     return mysql.createConnection({ 
         host: 'localhost',
         user: 'root',
-        password: 'PCJ4kNibl|xn',
+        password: '',
         database: 'fullstack'
     });
 }
