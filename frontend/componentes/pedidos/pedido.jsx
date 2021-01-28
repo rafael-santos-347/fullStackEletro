@@ -3,7 +3,7 @@ const Pedido = () => {
     const [pedidos, setPedidos] = React.useState([]);
 
     React.useEffect(async() => {
-        const resposta = await fetch('http://localhost/projetos/react/backend/pedido.php');
+        const resposta = await fetch('http://localhost:3030/pedido');
         setPedidos(await resposta.json());
         
     }, []);

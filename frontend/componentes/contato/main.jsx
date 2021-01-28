@@ -7,7 +7,7 @@ const Main = () => {
     async function cadastrarBd(event){
         event.preventDefault();
         let data = new FormData(event.target);
-        const url = "http://localhost/projetos/react/backend/contato.php";
+        const url = "http://localhost:3030/contato";
         const resposta = await fetch(url, {
             method: "POST",
             body: data
@@ -37,7 +37,7 @@ const Main = () => {
                 <p className="col-sm-4">(11) 9999-9999</p>
             </div>
 
-            <form onSubmit={cadastrarBd} className="form-group text-center mt-5 mb-5 container-fluid" action="http://localhost/projetos/react/backend/contato.php" >
+            <form onSubmit={cadastrarBd} className="form-group text-center mt-5 mb-5 container-fluid" action="http://localhost:3030/contato" >
                 {aviso && <legend  className="alert alert-primary mx-auto display-5 lead mb-4 w-50" role="alert">Enviado com Sucesso !</legend>} 
                 <div className="row align-items-center justify-content-center">
                 <label htmlFor="nome" className="col-sm-2 col-form-label "><h4>Nome: </h4></label>

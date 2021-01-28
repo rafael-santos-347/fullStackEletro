@@ -3,7 +3,7 @@ const Contato = () => {
     const [contatos, setContatos] = React.useState([]);
 
     React.useEffect(async() => {
-        const resposta = await fetch('http://localhost/projetos/react/backend/index.php?table=contato');
+        const resposta = await fetch('http://localhost:3030/?table=contato');
         setContatos(await resposta.json());
     }, [contatos]);
 

@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "2.0.0",
+  "description": "Back End do Projeto Full Stack Eletro",
+  "main": "index.js",
+  "scripts": {
+    "iniciar": "nodemon ./index.js"
+  },
+  "keywords": [
+    "NodeJS",
+    "API"
+  ],
+  "author": "Rafael Santos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.7"
+  }
+}

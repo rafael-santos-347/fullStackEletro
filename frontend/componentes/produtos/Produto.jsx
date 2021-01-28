@@ -4,7 +4,7 @@ const Produto = () => {
    
 
     React.useEffect(async() => {
-        const resposta = await fetch('http://localhost/projetos/react/backend/index.php?table=produtos');
+        const resposta = await fetch('http://localhost:3030/?table=produtos');
         setProdutos(await resposta.json());
     }, []);
 
