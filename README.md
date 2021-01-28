@@ -30,7 +30,7 @@ Exemplo:
 
 1 - http://localhost/projetos/react/backend/index.php?table=pedidos
 
-### Entrega 20/01/2020
+### Entrega 03/02/2020
 
 ### Entrega do Projeto Prático Individual de Node JS
 
