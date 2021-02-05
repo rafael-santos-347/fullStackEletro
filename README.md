@@ -1,35 +1,3 @@
-### Projeto Full Stack Eletro Recodepro 2020 - Entrega de Dezembro/2020
-
-### PHP
-
-Em relação a parte de PHP, os dados da lista devem ser retornados pelo PHP em formato JSON, para alimentação e uso no React Js.
-
-### ReactJS
-
-Em relação a parte de React.Js a solicitação é que você realize um refactory (refatoração) do front-end do seu projeto. Ou seja, é preciso realizar a reconstrução da interface do seu projeto utilizando o React. Js.
-
-### Bootstrap
-
-Em relação a parte de Bootstrap, a solicitação é que você utilize implemente no seu refactory (feito no curso anterior) pelo menos uma lista, estilizada com as classes de listas do Bootstrap.
-
-### Banco de dados (SQL)
-
-Agora, nesta última etapa os dados da lista devem ser originários de JOIN de pelo menos 2 tabelas.
-
-### O Banco de Dados está na pasta 'Db'
-
-./backend/Db/fullstack.sql
-
-### O Acesso a "API" de retorno JSON para consumo em react na pagina index.php
-
-./backend/index.php
-
-### Para acessar as tabelas "produtos", "pedidos" e "contato" é necessário via GET com chave "table" e valor conforme o nome da tabela que quer acessar
-
-Exemplo:
-
-1 - http://localhost/projetos/react/backend/index.php?table=pedidos
-
 ### Entrega 03/02/2020
 
 ### Entrega do Projeto Prático Individual de Node JS
@@ -46,12 +14,24 @@ Exemplo:
 3 - Criar Evento de acionamento das Actions (disparo para acionamento de 2 actions criadas, atualizando o componente envolvido).
 
 
-## Node JS
+### Node JS
 
 1 - Está configurado na porta 3030 então se ela estiver ocupada por favor trocar;
 2 - Para acessar os dados da tabela em formato JSON basta acessar via GET a chave table e o valor produtos, contato ou pedidos para acessar essas respectivas tabelas http://localhost:3030?table=produtos
 3 - O comando para inicar é npm run iniciar, conforme script;
 
-## React Back Intermediário
+### Entrega Projeto Individual noSQL com mongodb 12/02 - Em Andamento
 
-1 - 
+1 - Foi feito a refatoração para cadastrar no bd os comentários feitos na pagina http://localhost/frontend/contato;
+2 - Agora essa pagina cadastra no mongodb atraves do http://localhost:3030/contato;
+3 - porta 27017;
+4 - O retorno dos dados também é na mesma pagina de cadastro http://localhost/frontend/contato;
+
+### Entrega 10/02 - Projeto Individual React Front Avançado
+
+1 - Code Spliting feito na pagina loja.html. ./frontend/componentes/loja/code-spliting e também na pagina produtos.html ./frontend/componentes/produtos/code-splitting
+2 - npm start para iniciar
+
+
+
+ 

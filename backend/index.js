@@ -1,22 +1,20 @@
-
-/*let headers = new Headers();
-
-headers.append('Access-Control-Allow-Origin', 'http://localhost:3030');
-headers.append('Access-Control-Allow-Credentials', 'true'); */
-
 const express = require('express');
 const server = express();
 const cors = require('cors');
 const bodyparser = require('body-parser');
 const db = require('./conexao.js');
 let connection = db();
+const MongoClient = require('mongodb').MongoClient;
+const url = "mongodb://localhost:27017/";
 
 server.use(express.json());
 server.use(cors());
 
+server.use(bodyparser.json());
 server.use(bodyparser.urlencoded({extended:true}));
 
-
+server.set('view engine', 'ejs');
+server.set('views', './views');
 
     server.get("/", (req,res) => {
         let { table } = req.query;
@@ -26,11 +24,26 @@ server.use(bodyparser.urlencoded({extended:true}));
                 res.send(erros);
             } 
 
+            if(table == "contato") {
+                MongoClient.connect(url, (erros, db) => {
+                    if (erros) {
+                        return console.log(erros);
+                    }
+                    const dbo = db.db("contatos");
+                    dbo.collection("mensagens").find().toArray( (erro, result) => {                  
+                        if (erro) {
+                            return console.log(erro);
+                        }
+                      console.log(result);
+                      db.close();                      
+                    });                        
+                }); 
+                
+            }
+
             if (table == "produtos"){
                 res.send(resultado); 
             } else if (table == "pedidos") {
-                res.send(resultado); 
-            } else if (table == "contato") {
                 res.send(resultado); 
             } else if (table.length <= 0) {
                 res.send("Erro ao acessar os dados por favor inserir via GET ?table=produtos ou table=pedidos ou table=contato");
@@ -66,28 +79,29 @@ server.use(bodyparser.urlencoded({extended:true}));
 
     server.post("/contato", (req,res) => {
         let { nome , msg } = req.body;
-        connection.query(`INSERT INTO contato (nome, mensagem) VALUES ('${nome}','${msg}');`, (erros, resultado) => {
+
+        MongoClient.connect(url, (erros, db) => {
+            if (erros) throw erros;
+            const dbo = db.db("contatos");
+            let objeto = { name: nome, mensagem: msg };
+            dbo.collection("mensagens").insertOne(objeto, (erro, res) => {
+              if (erro) throw erro;
+              console.log("1 - documento inserido com sucesso");
+              db.close();
+            });
+        res.send("<h1>1 Documento inserido com sucesso !</h1>");
+        });
+       /*  connection.query(`INSERT INTO contato (nome, mensagem) VALUES ('${nome}','${msg}');`, (erros, resultado) => {
             if(erros) {
                 res.send(erros);
             } else {
                 res.status(201).send(`<h1>Mensagem enviada com sucesso, ${nome}</h1>`);
             }
         });
-        
-    })
+        */
+    });
 
-  /*  server.get("/", (req,res) => {
-        let query = connection.query("Select * from produtos" ,
-            (erros, resultado) => {
-                
-                res.json(resultado);
-            }
-        );
-        
-    })
-     */
-
-
-    server.listen(3030, () => {
-        console.log("Online");
+    const porta = 3030;
+    server.listen(porta, () => {
+        console.log(`Online na porta ${porta}`);
     });

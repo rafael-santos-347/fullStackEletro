@@ -83,15 +83,15 @@ CREATE TABLE IF NOT EXISTS `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produtos`, `nome`, `descricao`, `preco`, `nome_imagens`) VALUES
-(1, 'geladeira', 'Geladeira Electrolux 579L Duplex DM84X Inox', '5199.00', 'imagens/geladeira2.jpeg'),
-(2, 'geladeira', 'Geladeira Esmaltec RCD34 Preto 276L 110V - 375L', '1499.00', 'imagens/geladeira.jpeg'),
-(3, 'geladeira', 'Geladeira Frost Free Brastemp Side Inverse 540 Litros', '5019.00', 'imagens/geladeira3.jpeg'),
-(4, 'fogao', 'Fogão 5 Bocas Consul Acendimento Automático', '1561.47', 'imagens/fogao.jpeg'),
-(5, 'fogao', '5 bocas a gas bivolt acendimento automático Braslar', '389.99', 'imagens/fogao2.jpeg'),
-(6, 'microondas', 'Micro-ondas 20 Litros Consul com Porta Espelhada e Puxador', '494.90', 'imagens/micro2.jpeg'),
-(7, 'microondas', 'Micro-ondas Consul- Branco 32L', '611.90', 'imagens/micro.jpeg'),
-(8, 'microondas', 'Micro-ondas 20 Litros Consul com Porta Espelhada e Puxador', '494.90', 'imagens/micro3.jpeg'),
-(9, 'lava_loucas', 'Lava louças', '5019.00', 'imagens/lavar1.jpeg'),
-(10, 'lava_loucas', 'Lava louças', '5019.00', 'imagens/lavar1.jpeg'),
-(11, 'lava_roupas', 'Lava roupas', '5019.00', 'imagens/lavar2.jpeg'),
-(12, 'lava_roupas', 'lava roupas', '5019.00', 'imagens/lavar3.jpeg');
+(1, 'geladeira', 'Geladeira Electrolux 579L Duplex DM84X Inox', '5199.00', './imagens/geladeira2.jpeg'),
+(2, 'geladeira', 'Geladeira Esmaltec RCD34 Preto 276L 110V - 375L', '1499.00', './imagens/geladeira.jpeg'),
+(3, 'geladeira', 'Geladeira Frost Free Brastemp Side Inverse 540 Litros', '5019.00', './imagens/geladeira3.jpeg'),
+(4, 'fogao', 'Fogão 5 Bocas Consul Acendimento Automático', '1561.47', './imagens/fogao.jpeg'),
+(5, 'fogao', '5 bocas a gas bivolt acendimento automático Braslar', '389.99', './imagens/fogao2.jpeg'),
+(6, 'microondas', 'Micro-ondas 20 Litros Consul com Porta Espelhada e Puxador', '494.90', './imagens/micro2.jpeg'),
+(7, 'microondas', 'Micro-ondas Consul- Branco 32L', '611.90', './imagens/micro.jpeg'),
+(8, 'microondas', 'Micro-ondas 20 Litros Consul com Porta Espelhada e Puxador', '494.90', './imagens/micro3.jpeg'),
+(9, 'lava_loucas', 'Lava louças', '5019.00', './imagens/lavar1.jpeg'),
+(10, 'lava_loucas', 'Lava louças', '5019.00', './imagens/lavar1.jpeg'),
+(11, 'lava_roupas', 'Lava roupas', '5019.00', './imagens/lavar2.jpeg'),
+(12, 'lava_roupas', 'lava roupas', '5019.00', './imagens/lavar3.jpeg');
