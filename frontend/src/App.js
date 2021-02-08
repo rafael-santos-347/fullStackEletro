@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter , Routes , Route } from "react-router-dom";
 import Contato from './componentes/Contato/Contato';
-import Home from './pages/index';
+import Home from './componentes/Home/index';
 import Lojas from './componentes/Lojas/Lojas';
 import Erro from './componentes/NotFound/Erro';
 import Pedidos from './componentes/Pedidos/Pedidos';

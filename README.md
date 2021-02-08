@@ -21,5 +21,5 @@
 ### Entrega 12/02 - Projeto Individual React Back Avançado - Em Andamento
 
 1 - npm run dev para testar o funcionamento;
-2 - Está na pasta ./src/pages e está renderizando o componente Home na index do site;
+2 - Está na pasta ./src/pages/index e está renderizando o componente Home na index do site;
  
