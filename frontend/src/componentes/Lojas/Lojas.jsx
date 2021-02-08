@@ -10,10 +10,10 @@ const Lojas = () => {
         <Fragment>
         <Header />
         <main className="my-4 py-3">
-            <header class="display-3 text-info text-center mb-5">
+            <header className="display-3 text-info text-center mb-5">
                 <h1>Nossas lojas</h1>
             </header>
-            <table class="table text-center">
+            <table className="table text-center">
                 <tr>
                     <Suspense fallback={<p>Carregando cidades</p>}>
                         <Cidade1 />
