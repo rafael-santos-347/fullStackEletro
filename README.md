@@ -18,7 +18,7 @@
 1 - Code Spliting feito na pagina loja.html. ./frontend/componentes/loja/code-spliting e também na pagina produtos.html ./frontend/componentes/produtos/code-splitting;
 2 - npm start para iniciar;
 
-### Entrega 12/02 - Projeto Individual React Back Avançado - Em Andamento
+### Entrega 12/02 - Projeto Individual React Back Avançado - Concluido
 
 1 - npm run dev para testar o funcionamento;
 2 - Está na pasta ./src/pages/index e está renderizando o componente Home na index do site;

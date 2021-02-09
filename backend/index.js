@@ -94,5 +94,5 @@ server.use(bodyparser.urlencoded({extended:true}));
 
     const porta = 3030;
     server.listen(porta, () => {
-        console.log(`Online na porta ${porta}`);
+        console.log(`Online na porta ${porta}. Acesse http://localhost:${porta}/`);
     });
