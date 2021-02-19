@@ -6,6 +6,7 @@ const db = require('./conexao.js');
 let connection = db();
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb://localhost:27017/";
+const ip = require('ip');
 
 server.use(express.json());
 server.use(cors());
@@ -93,6 +94,7 @@ server.use(bodyparser.urlencoded({extended:true}));
     });
 
     const porta = 3030;
-    server.listen(porta, () => {
-        console.log(`Online na porta ${porta}. Acesse http://localhost:${porta}/`);
+    server.listen(porta, `${ip.address()}` , () => {
+        console.log(`Online na porta ${porta}. Acesso local http://localhost:${porta}/ 
+        		Acesso LAN http://${ip.address()}:3030/`);
     });

@@ -22,4 +22,10 @@
 
 1 - npm run dev para testar o funcionamento;
 2 - Está na pasta ./src/pages/index e está renderizando o componente Home na index do site;
+
+### Entrega 19/02 - Projeto Individual React Native - Em Andamento
+
+1 - expo start para iniciar;
+
+### Conluido mobile
  
